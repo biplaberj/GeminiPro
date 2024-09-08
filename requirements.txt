@@ -1,6 +1,5 @@
 google-generativeai
 python-dotenv
-PIL
 streamlit
 st-img-pastebutton
 pillow
