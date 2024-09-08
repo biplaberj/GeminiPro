@@ -19,8 +19,23 @@ def getGemeniResponse(input, image):
     return response.text
 
 st.set_page_config(page_title="Gemeni image chatbot")
-st.header("Gemeni Pro Image Chatbot")
-input=st.text_input("Input:", key="input")
+st.header("Gemeni Image Chatbot")
+
+st.markdown(
+    """
+    <style>
+    .creator-name {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        font-size: 16px;
+        color: grey;
+    }
+    </style>
+    <div class="creator-name">Created by Biplab Ghosh</div>
+    """,
+    unsafe_allow_html=True
+)
 
 #Upload image
 uploadedFile = st.file_uploader("Upload an image", type=["jpg", "jpeg", "png"])
@@ -47,8 +62,9 @@ if image_data:
     # Save the image
     #image.save("pasted_image.png")
 
-    st.success("Image pasted and saved successfully!")
+    st.success("Image pasted successfully!")
 
+input=st.text_input("Input:", key="input", placeholder="Enter your text here(optional)")
 submit = st.button("Tell me about this image")
 
 if submit:
