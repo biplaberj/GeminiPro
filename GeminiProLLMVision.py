@@ -7,7 +7,6 @@ from PIL import Image
 from st_img_pastebutton import paste
 import io
 import base64
-from streamlit_webrtc import webrtc_streamer, AudioProcessorBase, WebRtcMode
 
 genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
 model = genai.GenerativeModel("gemini-1.5-flash")
